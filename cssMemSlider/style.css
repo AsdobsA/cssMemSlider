@@ -1,0 +1,149 @@
+
+body, p {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    background-color: black;
+    position: relative;
+}
+
+.container__image > input {
+	display: none;
+}
+
+.container__image {
+    display: flex;
+    overflow: hidden;
+    transition: .8s;
+}
+
+.item__image1 {
+    opacity: 0;
+    width: 100vw;
+}
+
+#r1:checked ~ .s1 {
+	margin-left: 0;
+    transition: 1s;
+    opacity: 1;
+}
+
+#r2:checked ~ .s2 {
+	margin-left: -100vw;
+    transition: .8s;
+    opacity: 1;
+}
+
+#r3:checked ~ .s3 {
+	margin-left: -200vw;
+    transition: .8s;
+    opacity: 1;
+}
+
+#r4:checked ~ .s4 {
+	margin-left: -300vw;
+    transition: .8s;
+    opacity: 1;
+}
+
+.item__image {
+    height: calc(80vh - 50px);
+    width: calc(100vw - 300px);
+    padding: 25px 150px;
+}
+
+.container__control {
+    height: 19.4vh;
+    width: calc(100vw - 300px);
+    padding: 0 150px;
+    display: flex;
+    position: relative;
+}
+
+.container__text {
+    color: white;
+    font-size: 1.5em;
+    width: 70%;
+    overflow: hidden;
+}
+
+.container__text-item {
+    height: 19.4vh;
+}
+
+.container__button {
+	height: 19.4vh;
+	width: 30vw;
+}
+
+.container__button__wrap {
+	width: 26vw;
+	height: 19.4vh;
+}
+
+.container__button {
+    display: flex;
+    justify-content: end;
+}
+
+.container__button div {
+    display: block;
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+}
+
+.container__button label {
+	display: inline-block;
+	height: .7em;
+	width: .7em;
+	border-radius: 50%;
+}
+
+.container label:hover, 
+#r1:checked ~ .container__button div label:nth-of-type(1),
+#r2:checked ~ .container__button div label:nth-of-type(2),
+#r3:checked ~ .container__button div label:nth-of-type(3),
+#r4:checked ~ .container__button div label:nth-of-type(4) {
+	background-color: red;
+}
+
+label:after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	border: 2px solid bisque;
+	content: " ";
+	height: 1em;
+	width: 1em;
+	border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .item__image {
+        height: calc(80vh - 10px);
+        width: calc(100vw - 30px);
+        padding: 5px 15px;
+    }
+
+    .container__control {
+        height: 19.4vh;
+        width: calc(100vw - 30px);
+        padding: 0 15px;
+        display: flex;
+        position: relative;
+    }
+
+    .container__button {
+        position: absolute;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .container__text {
+        padding-top: 2em;
+    }
+}
+
